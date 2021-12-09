@@ -33,7 +33,5 @@ mongoose.connection.on('error', err => {
 app.get('/', requireAuth, (req, res) => {
   res.send(`Your email: ${req.user.email}`);
 });
-
-app.listen(3000, () => {
-  console.log('Listening on port 3000');
-});
+const port = process.env.PORT || 5000;
+app.listen(port, () => console.log(`Example app listening on port ${port}!`))
